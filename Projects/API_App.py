@@ -1,9 +1,10 @@
+import asyncio
 from fastapi import FastAPI
 company_list = ['Oracle','Google','Microsoft','Amazon','Deloitte','123','abc']
 app = FastAPI()
 
 @app.get("/replace-string")
-def replace_words(company=None):
+asyncio def replace_words(company=None):
 
     if company in company_list and '©️' not in company:
         new_name = company+'©️'
